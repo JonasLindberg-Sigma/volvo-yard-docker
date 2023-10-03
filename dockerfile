@@ -4,4 +4,4 @@ WORKDIR /usr/app/src
 
 COPY main.py ./
 
-CMD [ "python", "./main.py"]
+CMD [ "python", "./hellow_world.py"]
