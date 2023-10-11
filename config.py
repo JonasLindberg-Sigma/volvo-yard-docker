@@ -1,9 +1,9 @@
-from omegaconf import OmegaConf
+#from omegaconf import OmegaConf
 
-_CFG = {
-    "source_type": "stream",  # stream/camera
-    "url": ""
-}
+#_CFG = {
+#    "source_type": "stream",  # stream/camera
+#    "url": ""
+#}
 
-def get_config():
-    return OmegaConf.create(_CFG)
+#def get_config():
+#    return OmegaConf.create(_CFG)

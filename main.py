@@ -1,27 +1,14 @@
-import urllib.request
+import os
+os.system('Xvfb :1 -screen 0 1600x1200x16  &')    # create virtual display with size 1600x1200 and 16 bit color.
+os.environ['DISPLAY']=':1.0'    # tell X clients to use our virtual DISPLAY :1.0
 
-from config import get_config
+from truckCapturer.camera_controller import initiate
 
-## Connect to Camera or to stream
-def connect_to_source(cfg):
-    if cfg.source_type == "stream":
-        pass
-    elif cfg.source_type == "camera":
-        pass
-    else:
-        raise "Invalid source type, should be either stream or camera"
-
-## Connect to SQL Database
-def check_connect_to_database(cfg):
-    try:
-        urllib.request.urlopen(cfg.url)
-    except Exception as e:
-        print(e)
 
 def main():
-    cfg = get_config()
-    connect_to_source(cfg)
-    check_connect_to_database(cfg)
+    # Initialization
+    src = 'https://www.youtube.com/watch?v=IGkTMeZ8_g4'
+    initiate(src)
 
 
 if __name__ == "__main__":
